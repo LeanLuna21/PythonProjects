@@ -1,0 +1,23 @@
+<!-- esta linea indica que este html hereda su estructura de 'template_padre.html' -->
+{% extends './template_padre.html' %}
+<!-- esto carga los estilos -->
+{% load static %}
+<!-- ingresamos el contenido que cambiara en las distintas paginas 'hijas' -->
+{% block contenidoQueCambia %}
+
+<h1 style="text-align: center"> Bienvenido a tienda "That's no moon!" </h1>
+
+
+<br>
+<br>
+<h2> Busqueda de Productos: </h2>
+<br>
+<form action="/stock/buscar_producto/" method="GET">
+    <p>Ingrese personaje: <input type="text" name="nombre" id=""></p>
+    <br>
+    <input type="submit" value="Buscar">
+    <br>
+</form>
+
+
+{% endblock contenidoQueCambia %}

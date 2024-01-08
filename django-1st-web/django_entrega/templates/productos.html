@@ -1,0 +1,25 @@
+{% extends './template_padre.html' %}
+
+
+{% block contenidoQueCambia %}
+
+<h1 style="text-align: center"> Esta es la pestaña productos </h1>
+
+{% if mi_formulario.error %}
+<p style="color:red"> Datos Invalidos! </p>
+{% endif %}
+
+<br>
+<br>
+<h2>Formulario - Ingresar Nuevo Producto: </h2>
+<br>
+<form action="/stock/ingresar_producto/" method="POST"> {% csrf_token %}
+    <table>
+        {{mi_formulario.as_table}}
+    </table>
+    <br>
+    <input type="submit" value="Guardar">
+    <br>
+</form>
+
+{% endblock contenidoQueCambia %}
